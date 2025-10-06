@@ -58,6 +58,7 @@ pipeline {
                     git config --global user.email "het66pandya@gmail.com"
                     git config --global user.name "Pandya Het"
                     BUILD_NUMBER=${BUILD_NUMBER}
+                    git checkout master
                     git pull origin master
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
                     git add spring-boot-app-manifests/deployment.yml
